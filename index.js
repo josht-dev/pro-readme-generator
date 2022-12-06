@@ -1,4 +1,5 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
+const genMd = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
