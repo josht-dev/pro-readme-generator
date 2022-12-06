@@ -1,4 +1,9 @@
-# pro-readme-generator
+# PRO-README-GENERATOR
+
+![GitHub](https://img.shields.io/github/license/josht-dev/pro-readme-generator?style=for-the-badge)
+![node-lts](https://img.shields.io/node/v-lts/pro-readme-generator?style=for-the-badge)
+[![npm version](https://img.shields.io/badge/npm_package-8.2.4-brightgreen?style=for-the-badge&logo=appveyor)](https://badge.fury.io/js/inquirer)
+![GitHub issues](https://img.shields.io/github/issues/josht-dev/pro-readme-generator?style=for-the-badge)
 
 ## Description
 
