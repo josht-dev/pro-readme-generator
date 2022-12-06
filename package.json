@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "engines": {
+    "node": "-16.18.0"
   }
 }
