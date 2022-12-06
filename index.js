@@ -4,12 +4,11 @@ const genMd = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [
     "Enter the project title: ", 
-    "Add a table of contents? Y/N ", 
-    "Enter installation instructions with a ';' between each step: ", 
+    "Add a table of contents? Y/N ",  
     "Add usage instructions: ", 
     "What license does your project use? ", 
-    "Add optional sections; badges, features, tests, and how to contribute? Y/N ", 
-    "Add badges...", 
+    "Add optional sections; installation, features, tests, and how to contribute? Y/N ", 
+    "Enter installation instructions with a ';' between each step: ", 
     "List Features separated by ';' between each feature: ", 
     "Add instructions on how others can contribute: ", 
     "Add the tests section? Y/N "
