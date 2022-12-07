@@ -3,7 +3,7 @@ const genMd = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -66,15 +66,18 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
-    // TODO - Prompt the user with questions via inquirer.prompt
+    // Prompt the user with questions via inquirer.prompt
+    inquirer
+        .prompt(questions).then((response) => {
+            // Use the user data to generate the readme data
+            let readme = genMd.generateMarkdown(response);
 
-    // TODO - Format the received data into a readme
-
-    // TODO - Write answers to file
-
-    
+            // Write readme to file
+            writeToFile('test.txt', readme);
+        });
+    //
 }
 
 // Function call to initialize app
