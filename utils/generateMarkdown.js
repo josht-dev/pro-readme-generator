@@ -7,23 +7,21 @@ function renderLicenseBadge(license) {
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  license = license.toLowerCase();
-  license = license.replace(' ', '-');
-  // TODO - license in link must be lowercase and spaces have hyphens
-
+  // Do some formatting if license present
+  if (license) {
+    license = license.toLowerCase();
+    license = license.replace(' ', '-');
+  }
   return (license) ? `https://choosealicense.com/licenses/${license}/` : '';
 }
 
 // Create a function that returns the license section of README
-// STARTER COMMENT: If there is no license, return an empty string
-/* Validation is present in inquirer call, user selects from a list to proceed,
-  function is never called without a license present*/
+// If there is no license, return an empty string
 function renderLicenseSection(license) {
   // Get the link urls
   const link = renderLicenseLink(license);
-
   // Return formatted license section of readme
-  return `## License\n\nThis project is covered under the [${license}](${link}) license.`;
+  return (license) ? `## License\n\nThis project is covered under the [${license}](${link}) license.` : '';
 }
 
 // Create a function to generate markdown for README
