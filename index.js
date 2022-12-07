@@ -8,49 +8,57 @@ const questions = [
     {
         type: 'input',
         message: "Enter the project title: ",
-        name: 'title'
+        name: 'title',
+        validate: function(title) {
+            // User must enter project title
+            return (title) ? true : false;
+        }
     },
     {
         type: 'input',
         message: "Enter a project description: ",
-        name: 'description'
+        name: 'Description'
     },
     {
         type: 'input',
         message: "Enter installation instructions with a ';' between each step: ",
-        name: 'installation'
+        name: 'Installation'
     },
     {
         type: 'input',
         message: "Enter usage instructions: ",
-        name: 'usage'
+        name: 'Usage'
     },
     {
         type: 'input',
         message: "List Features separated by ';' between each feature: ",
-        name: 'features'
+        name: 'Features'
     },
     {
         type: 'input',
         message: "Enter instructions on how others can contribute: ",
-        name: 'contribute'
+        name: 'Contribute'
     },
     {
         type: 'input',
         message: "Enter test instructions: ",
-        name: 'tests'
+        name: 'Tests'
     },
     {
         type: 'list',
         message: "Choose a license to use: ",
-        name: 'license',
+        name: 'License',
         choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'Unlicense'],
         default: 'MIT'
     },
     {
         type: 'input',
         message: "Enter your GitHub username: ",
-        name: 'username'
+        name: 'username',
+        validate: function(username) {
+            // User must enter GitHub user name
+            return (username) ? true : false;
+        }
     },
     {
         type: 'input',

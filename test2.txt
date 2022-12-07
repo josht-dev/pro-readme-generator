@@ -1,1 +1,1 @@
-{"title":"test","description":"test","installation":"N/A","usage":"test","features":"","contribute":"","tests":"test","license":"MIT","username":"josht-dev","email":"test@test.com"}
+{"title":"tite","Description":"k","Installation":"k","Usage":"\\\\","Features":"","Contribute":"","Tests":"","License":"MIT","username":"","email":"test@test.com"}

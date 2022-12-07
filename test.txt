@@ -1,29 +1,18 @@
-# TEST
+# TITE
 
-[![license](https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge&logo=appveyor)](https://choosealicense.com/licenses/mit/)
+## Description
 
-## undefined
+k
 
-test
+## Installation
 
-## undefined
+k
 
-N/A
+## Usage
 
-## undefined
-
-test
-
-## undefined
-
-test
+\\
 
 ## License
 
-This project is covered under the [MIT](https://choosealicense.com/licenses/mit/) license.
-
-## Questions
-
-For any questions, please reach out to my following contact locations: 
-![josht-dev](https://github.com/undefined)
+MIT
 test@test.com
