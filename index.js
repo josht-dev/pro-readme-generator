@@ -20,6 +20,11 @@ const questions = [
         name: 'Description'
     },
     {
+        type: 'confirm',
+        message: 'Include a table of contents? (Y/N)',
+        name: 'index'
+    },
+    {
         type: 'input',
         message: "Enter installation instructions with a ';' between each step: ",
         name: 'Installation'
@@ -83,6 +88,7 @@ function writeToFile(fileName, data) {
 
 // Create a function to initialize app
 function init() {
+    console.log('Welcome to the professional README generator!');
     // Prompt the user with questions via inquirer.prompt
     inquirer
         .prompt(questions).then((response) => {
