@@ -90,10 +90,10 @@ function init() {
             let readme = genMd(response);
 
             // REMOVE - TESTING ONLY
-            writeToFile('test2.txt', JSON.stringify(response));
+            writeToFile('test2.md', JSON.stringify(response));
 
             // Write readme to file
-            writeToFile('test.txt', readme);
+            writeToFile('test.md', readme);
         });
     //
 }
