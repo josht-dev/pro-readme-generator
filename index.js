@@ -25,11 +25,11 @@ const questions = [
         message: "Enter usage instructions: ",
         name: 'usage'
     },
-    /*{
+    {
         type: 'input',
         message: "List Features separated by ';' between each feature: ",
         name: 'features'
-    },*/
+    },
     {
         type: 'input',
         message: "Enter instructions on how others can contribute: ",
@@ -55,7 +55,14 @@ const questions = [
     {
         type: 'input',
         message: "Enter your email address: ",
-        name: 'email'
+        name: 'email',
+        validate: function(email) {
+            // Use regex to validate a proper email
+            const validation = 
+                new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+\.[A-Za-z0-9.-]+$/, 'gm');
+            //
+            return validation.test(email);
+        }
     }
 ];
 
@@ -72,7 +79,10 @@ function init() {
     inquirer
         .prompt(questions).then((response) => {
             // Use the user data to generate the readme data
-            let readme = genMd.generateMarkdown(response);
+            let readme = genMd(response);
+
+            // REMOVE - TESTING ONLY
+            writeToFile('test2.txt', JSON.stringify(response));
 
             // Write readme to file
             writeToFile('test.txt', readme);

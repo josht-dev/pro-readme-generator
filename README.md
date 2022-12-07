@@ -39,6 +39,8 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
+Used the following tutorial for the email address validation: https://www.abstractapi.com/guides/email-validation-regex-javascript#:~:text=The%20Javascript%20Regex%20object%20provides,That's%20it!
+
 List your collaborators, if any, with links to their GitHub profiles.
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
