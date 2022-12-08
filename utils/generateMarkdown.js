@@ -98,7 +98,25 @@ function generateMarkdown(data) {
   const bareMin = ['description', 'installation', 'usage', 'credits'];
   // Generate license badge
   const licBadge = `[![license](${renderLicenseBadge(data.license)})](${renderLicenseLink(data.license)})`;
+  const tableContents = '';
 
+  // Did the user answer 'Y' to a table of contents
+  if (data.index) {
+    tableContents = '\n\n## Table of Contents\n';
+    // Loop through the data obj dynamically adding a table of contents
+    for (const x in data) {
+      // Skip some keys
+      if (x === 'title' || x === 'index' || x === 'username' || x === 'email') {
+        continue;
+      }
+      // Check if data present to add to the table of contents
+      if (data[x]) {
+        let link = x.toLowerCase();
+        link = link.replace(' ', '-');
+        tableContents = tableContents.concat(`\n- [x](#${link})`);
+      }
+    }
+  }
 
   for (const key in data) {
     // Check if this is for the title
@@ -111,21 +129,35 @@ function generateMarkdown(data) {
       // Check is this is a required section, otherwise skip
       if (bareMin.includes(key.toLowerCase())) {
         readme = readme.concat(`\n\n## ${key}\n\nN/A`);
-
+        continue;
       } else {
         continue;
       }
     }
-    // Did the user answer 'Y' to a table of contents
+    // Add the table of contents if user selected it
     if (key === 'index' && data[key]) {
-      
-
-
-
+      readme = readme.concat(tableContents);
+      continue;
     }
-    
-    
+    // TODO - Handle any user inputs with multiple steps
 
+    // Add the License section
+    if (key === '') {
+
+      continue;
+    }
+
+    // Add the Questions section and skip the email obj key
+    if (key === 'username') {
+
+
+      
+      continue;
+    }
+    if (key === 'email') {continue;}
+    
+    // Handle all other sections that did not need specific logic
+    readme = readme.concat(`\n\n## ${key}\n\n${data[key]}`);
   }
 
 /*
