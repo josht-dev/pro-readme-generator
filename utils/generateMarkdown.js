@@ -24,15 +24,16 @@ function renderLicenseSection(license) {
   return (license) ? `## License\n\nThis project is covered under the [${license}](${link}) license.` : '';
 }
 
+
+
+
 // Create a function to generate markdown for README
 function generateMarkdown(data) {
   // variable to hold formatted readme content
   let readme = '';
-  // Bare minimum sections
-  const bareMin = ['title', 'description', 'installation', 'usage', 'credits'];
-
+  
   // Only include sections with user data present or are the bare minimum
-  for (const key in data) {
+  /*for (const key in data) {
     // Check if user input missing
     if (!data[key]) {
       // If section is part of bare minimum, add N/A
@@ -91,7 +92,56 @@ function generateMarkdown(data) {
         readme = readme.concat(`\n\n## ${key}\n\n`, data[key]);
         break;
     }
+  }*/
+
+  // Bare minimum sections
+  const bareMin = ['description', 'installation', 'usage', 'credits'];
+  // Generate license badge
+  const licBadge = `[![license](${renderLicenseBadge(data.license)})](${renderLicenseLink(data.license)})`;
+
+
+  for (const key in data) {
+    // Check if this is for the title
+    if (data[key] = 'title') {
+      readme = `# ${data[key].toUppercase()}\n\n${licBadge}`;
+      continue;      
+    }
+    // Check if value is empty
+    if (!data[key]) {
+      // Check is this is a required section, otherwise skip
+      if (bareMin.includes(key.toLowerCase())) {
+        readme = readme.concat(`\n\n## ${key}\n\nN/A`);
+
+      } else {
+        continue;
+      }
+    }
+    // Did the user answer 'Y' to a table of contents
+    if (key === 'index' && data[key]) {
+      
+
+
+
+    }
+    
+    
+
   }
+
+/*
+title
+descrip
+table
+install
+usage
+credit
+license
+feature
+contribut
+tests
+questions
+*/
+
 
   // Return formatted readme file
   return readme;
