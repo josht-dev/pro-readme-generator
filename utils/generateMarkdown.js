@@ -11,6 +11,24 @@ function renderLicenseLink(license) {
   if (license) {
     license = license.toLowerCase();
     license = license.replace(' ', '-');
+    switch (key) {
+      case 'gnu-agplv3':
+        license = 'agpl-3.0'
+      case 'gnu-gplv3':
+        license = 'gpl-3.0';
+        break;
+      case 'gnu-lgplv3':
+        license = 'lgpl-3.0';
+        break;
+      case 'Mozilla Public 2.0':
+        license = 'mpl-2.0';
+        break;
+      case 'boost-software-1.0':
+        license = 'bsl-1.0';
+        break;
+      default:
+        break;
+    }
   }
   return (license) ? `https://choosealicense.com/licenses/${license}/` : '';
 }
