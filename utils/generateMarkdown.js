@@ -69,6 +69,7 @@ function generateMarkdown(data) {
       }
     }
   }
+
   // Loop through the data obj adding sections to the readme
   for (const key in data) {
     // Check if this is for the title
@@ -95,7 +96,7 @@ function generateMarkdown(data) {
 
     // Add the License section
     if (key.toLowerCase() === 'license') {
-
+      renderLicenseSection(data[key]);
       continue;
     }
 
@@ -114,21 +115,6 @@ function generateMarkdown(data) {
     // Handle all other sections that did not need specific logic
     readme = readme.concat(`\n\n## ${key}\n\n${data[key]}`);
   }
-
-/*
-title
-descrip
-table
-install
-usage
-credit
-license
-feature
-contribut
-tests
-questions
-*/
-
 
   // Return formatted readme file
   return readme;
