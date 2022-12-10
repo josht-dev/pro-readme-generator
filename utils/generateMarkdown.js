@@ -1,17 +1,17 @@
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  license = license.replace(/ /g, '_');
   return (license) ? `https://img.shields.io/badge/license-${license}-brightgreen?style=for-the-badge&logo=appveyor` : '';
 }
 
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  console.log('render license link success! ' + license);
   // Do some formatting if license present
   if (license) {
     license = license.toLowerCase();
-    license = license.replace(' ', '-');
+    license = license.replace(/ /g, '-');
     switch (license) {
       case 'gnu-agplv3':
         license = 'agpl-3.0'
@@ -21,7 +21,7 @@ function renderLicenseLink(license) {
       case 'gnu-lgplv3':
         license = 'lgpl-3.0';
         break;
-      case 'Mozilla Public 2.0':
+      case 'mozilla-public-2.0':
         license = 'mpl-2.0';
         break;
       case 'boost-software-1.0':
@@ -37,11 +37,10 @@ function renderLicenseLink(license) {
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  console.log('render license section success! ' + license);
   // Get the link urls
   const link = renderLicenseLink(license);
   // Return formatted license section of readme
-  return (license) ? `## License\n\nThis project is covered under the [${license}](${link}) license.` : '';
+  return (license) ? `\n\n## License\n\nThis project is covered under the [${license}](${link}) license.` : '';
 }
 
 // Create a function to generate markdown for README
@@ -51,9 +50,10 @@ function generateMarkdown(data) {
   // Bare minimum sections
   const bareMin = ['description', 'installation', 'usage', 'credits'];
   // Generate license badge
-  const licBadge = `[![license](${renderLicenseBadge(data.license)})](${renderLicenseLink(data.license)})`;
+  const licBadge = `[![license](${renderLicenseBadge(data.License)})](${renderLicenseLink(data.License)})`;
   let tableContents = '';
 
+  // TODO - Fix table of contents when required sections are blank
   // Did the user answer 'Y' to a table of contents
   if (data.index) {
     tableContents = '\n\n## Table of Contents\n';
@@ -98,11 +98,11 @@ function generateMarkdown(data) {
 
     // Add the License section
     if (key.toLowerCase() === 'license') {
-      console.log('license if success!');
-      readme = readme.concat(`\n\n## License\n\n${renderLicenseSection(data[key])}`);
+      readme = readme.concat(`${renderLicenseSection(data[key])}`);
       continue;
     }
 
+    // TODO - Fix github link and contact formatting
     // Add the Questions section and skip the email obj key
     if (key.toLowerCase() === 'username') {
       readme = readme.concat(

@@ -1,1 +1,1 @@
-{"title":"test","Description":"","index":false,"Installation":"","Usage":"","Credits":"","License":"MIT","Features":"","How to Contribute":"","Tests":"","username":"test","email":"test@gmail.com"}
+{"title":"test2","Description":"","index":true,"Installation":"","Usage":"","Credits":"no","License":"Mozilla Public 2.0","Features":"no","How to Contribute":"no","Tests":"","username":"josht-dev","email":"test@gmail.com"}
