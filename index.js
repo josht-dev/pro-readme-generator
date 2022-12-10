@@ -36,18 +36,8 @@ const questions = [
     },
     {
         type: 'input',
-        message: "Add the project features: ",
-        name: 'Features'
-    },
-    {
-        type: 'input',
-        message: "Enter instructions on how others can contribute: ",
-        name: 'Contribute'
-    },
-    {
-        type: 'input',
-        message: "Enter test instructions: ",
-        name: 'Tests'
+        message: "List your collaborators, third-party assets, and any tutorials you followed: ",
+        name: 'Credits'
     },
     {
         type: 'list',
@@ -55,6 +45,21 @@ const questions = [
         name: 'License',
         choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'Unlicense'],
         default: 'MIT'
+    },
+    {
+        type: 'input',
+        message: "Add the project features: ",
+        name: 'Features'
+    },
+    {
+        type: 'input',
+        message: "Enter instructions on how others can contribute: ",
+        name: 'How to Contribute'
+    },
+    {
+        type: 'input',
+        message: "Enter test instructions: ",
+        name: 'Tests'
     },
     {
         type: 'input',
