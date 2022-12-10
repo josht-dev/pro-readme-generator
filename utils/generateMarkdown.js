@@ -11,7 +11,7 @@ function renderLicenseLink(license) {
   if (license) {
     license = license.toLowerCase();
     license = license.replace(' ', '-');
-    switch (key) {
+    switch (license) {
       case 'gnu-agplv3':
         license = 'agpl-3.0'
       case 'gnu-gplv3':
@@ -50,7 +50,7 @@ function generateMarkdown(data) {
   const bareMin = ['description', 'installation', 'usage', 'credits'];
   // Generate license badge
   const licBadge = `[![license](${renderLicenseBadge(data.license)})](${renderLicenseLink(data.license)})`;
-  const tableContents = '';
+  let tableContents = '';
 
   // Did the user answer 'Y' to a table of contents
   if (data.index) {
@@ -65,7 +65,7 @@ function generateMarkdown(data) {
       // Check if data present to add to the table of contents
       if (data[i]) {
         let link = x.replace(' ', '-');
-        tableContents = tableContents.concat(`\n- [i](#${link})`);
+        tableContents = tableContents.concat(`\n- [${i}](#${link})`);
       }
     }
   }
@@ -73,8 +73,8 @@ function generateMarkdown(data) {
   // Loop through the data obj adding sections to the readme
   for (const key in data) {
     // Check if this is for the title
-    if (data[key.toLowerCase()] = 'title') {
-      readme = `# ${data[key].toUppercase()}\n\n${licBadge}`;
+    if (key.toLowerCase() === 'title') {
+      readme = `# ${data[key].toUpperCase()}\n\n${licBadge}`;
       continue;      
     }
     // Check if value is empty
@@ -88,7 +88,7 @@ function generateMarkdown(data) {
       }
     }
     // Add the table of contents if user selected it
-    if (key === 'index' && data[key]) {
+    if (key.toLowerCase() === 'index' && data[key]) {
       readme = readme.concat(tableContents);
       continue;
     }

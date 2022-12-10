@@ -26,7 +26,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: "Enter installation instructions with a ';' between each step: ",
+        message: "Enter installation instructions: ",
         name: 'Installation'
     },
     {
@@ -36,7 +36,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: "List Features separated by ';' between each feature: ",
+        message: "Add the project features: ",
         name: 'Features'
     },
     {
