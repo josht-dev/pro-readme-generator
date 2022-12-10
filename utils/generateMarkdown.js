@@ -65,11 +65,18 @@ function generateMarkdown(data) {
         continue;
       }
       // Check if data present to add to the table of contents
-      if (data[i]) {
-        let link = x.replace(' ', '-');
+      if (data[i] || bareMin.includes(x)) {
+        let link = x.replace(/ /g, '-');
         tableContents = tableContents.concat(`\n- [${i}](#${link})`);
+      } else {
+        continue;
       }
     }
+    // Add questions link
+    console.log('contents outside loop');
+    tableContents.concat('\n- [Questions](#questions)');
+    console.log('post table of contents: ');
+    console.log(tableContents);
   }
 
   // Loop through the data obj adding sections to the readme

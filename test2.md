@@ -1,1 +1,1 @@
-{"title":"test2","Description":"","index":true,"Installation":"","Usage":"","Credits":"no","License":"Mozilla Public 2.0","Features":"no","How to Contribute":"no","Tests":"","username":"josht-dev","email":"test@gmail.com"}
+{"title":"testagain","Description":"hre","index":true,"Installation":"k","Usage":"ks","Credits":"","License":"GNU GPLv3","Features":"","How to Contribute":"","Tests":"test","username":"josht-dev","email":"test@gmail.gom"}
