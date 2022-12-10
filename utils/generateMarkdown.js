@@ -7,6 +7,7 @@ function renderLicenseBadge(license) {
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  console.log('render license link success! ' + license);
   // Do some formatting if license present
   if (license) {
     license = license.toLowerCase();
@@ -36,6 +37,7 @@ function renderLicenseLink(license) {
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  console.log('render license section success! ' + license);
   // Get the link urls
   const link = renderLicenseLink(license);
   // Return formatted license section of readme
@@ -96,7 +98,8 @@ function generateMarkdown(data) {
 
     // Add the License section
     if (key.toLowerCase() === 'license') {
-      renderLicenseSection(data[key]);
+      console.log('license if success!');
+      readme = readme.concat(`\n\n## License\n\n${renderLicenseSection(data[key])}`);
       continue;
     }
 

@@ -1,1 +1,1 @@
-{"title":"project-1","Description":"here is a descripton","index":true,"Installation":"","Usage":"","Features":"","Contribute":"","Tests":"","License":"MIT","username":"josht-dev","email":"josht-dev@test.com"}
+{"title":"test","Description":"","index":false,"Installation":"","Usage":"","Credits":"","License":"MIT","Features":"","How to Contribute":"","Tests":"","username":"test","email":"test@gmail.com"}
