@@ -98,15 +98,13 @@ function generateMarkdown(data) {
       readme = readme.concat(tableContents);
       continue;
     }
-    // TODO - Handle any user inputs with multiple steps
-
+    
     // Add the License section
     if (key.toLowerCase() === 'license') {
       readme = readme.concat(`${renderLicenseSection(data[key])}`);
       continue;
     }
 
-    // TODO - Fix github link and contact formatting
     // Add the Questions section and skip the email obj key
     if (key.toLowerCase() === 'username') {
       readme = readme.concat(
@@ -129,4 +127,5 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
+// TODO - Handle any user inputs with multiple steps
 // TODO - Add validation for github username/page
