@@ -100,11 +100,8 @@ function init() {
             // Use the user data to generate the readme data
             let readme = genMd(response);
 
-            // REMOVE - TESTING ONLY
-            writeToFile('test2.md', JSON.stringify(response));
-
             // Write readme to file
-            writeToFile('test.md', readme);
+            writeToFile('./output/README.md', readme);
         });
     //
 }
