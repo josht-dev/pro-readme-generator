@@ -1,44 +1,35 @@
 # PRO-README-GENERATOR
 
 ![GitHub](https://img.shields.io/github/license/josht-dev/pro-readme-generator?style=for-the-badge)
-![node-lts](https://img.shields.io/badge/node-18.16.0-brightgreen?style=for-the-badge)
+![node-lts](https://img.shields.io/badge/node-16.18.0-brightgreen?style=for-the-badge)
 [![npm version](https://img.shields.io/badge/npm_package-8.2.4-brightgreen?style=for-the-badge&logo=appveyor)](https://badge.fury.io/js/inquirer)
 ![GitHub issues](https://img.shields.io/github/issues/josht-dev/pro-readme-generator?style=for-the-badge)
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+This NodeJS application was created to facilitate the quick creation of quality professional README's for projects. It uses NodeJS with the Inquirer and FS modules. I learned a lot about string formatting in JavaScript and the use of modules while working through the challenges of this project.
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+- Clone the GitHub repo for the pro-readme-generator application.
+
+- Install NodeJS version 16.18.0. Any v16 will probably work, but the project specifically used v16.18.0. You can find installation instructions for Windows and macOs here: https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs. See your app store for the various linux distributions and install the v16 gallium version of the NodeJS package. This will also install NPM.
+
+- Once NodeJS is installed, install inquirer 8.2.4 with a terminal opened in the project directory with the following command line: npm i inquirer@8.2.4
+
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Open a terminal in the project directory and run the command 'node index'. Answer the prompts in the terminal. Any required inputs or format has validation to check the user input. Once all the prompts are answered, the completed README.md file is saved to the output folder in the project directory.
 
     ```md
-![screenshot](assets/images/)
+![screenshot](./assets/images/screenshot.png)
     ```
 
 ## Credits
 
-Used the following tutorial for the email address validation: https://www.abstractapi.com/guides/email-validation-regex-javascript#:~:text=The%20Javascript%20Regex%20object%20provides,That's%20it!
+I used the following tutorial for the email address validation: https://www.abstractapi.com/guides/email-validation-regex-javascript#:~:text=The%20Javascript%20Regex%20object%20provides,That's%20it!
 
 ## License
 
-Refer to the LICENSE in the repo for the code.
+Refer to the LICENSE in the repo.
