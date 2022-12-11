@@ -103,6 +103,7 @@ function writeToFile(fileName, data) {
 // Create a function to initialize app
 function init() {
     console.log('Welcome to the professional README generator!');
+    console.log('If you need multiple lines for an input, use "//" in the input to indicate it to the application.');
     // Prompt the user with questions via inquirer.prompt
     inquirer
         .prompt(questions).then((response) => {
