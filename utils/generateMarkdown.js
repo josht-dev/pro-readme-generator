@@ -73,10 +73,7 @@ function generateMarkdown(data) {
       }
     }
     // Add questions link
-    console.log('contents outside loop');
     tableContents = tableContents.concat('\n- [Questions](#questions)');
-    console.log('post table of contents: ');
-    console.log(tableContents);
   }
 
   // Loop through the data obj adding sections to the readme
@@ -114,9 +111,9 @@ function generateMarkdown(data) {
     if (key.toLowerCase() === 'username') {
       readme = readme.concat(
         '\n\n## Questions\n\n', 
-        'For any questions, please reach out to my following contact locations:', 
-        `\n![${data[key]}](https://github.com/${data[key]})`, 
-        `\n${data.email}`
+        'For any questions, please reach out to one of my points of contact:', 
+        `\n[https://github.com/${data[key]}](https://github.com/${data[key]})`, 
+        ` | ${data.email}`
       ); 
       continue;
     }

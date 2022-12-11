@@ -1,1 +1,0 @@
-{"title":"test","Description":"","index":true,"Installation":"","Usage":"","Credits":"","License":"MIT","Features":"","How to Contribute":"","Tests":"","username":"test","email":"test@gmail.com"}
