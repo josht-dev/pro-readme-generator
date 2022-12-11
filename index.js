@@ -86,8 +86,17 @@ const questions = [
 
 // Create a function to write README file
 function writeToFile(fileName, data) {
+    // Create /output directory if needed
+    fs.mkdir('./output', (err) => {
+        if (err) {
+            err.errno === -17 ? console.log('Output folder already exists.') : console.error(err);
+        } else {
+            ('Successfully created output folder!')
+        }
+    });
+    // Create readme.md file
     fs.writeFile(fileName, data, (err) => {
-        err ? console.error(err) : console.log('Success!');
+        err ? console.error(err) : console.log('Successfully created README.md!');
     });
 }
 
