@@ -74,7 +74,7 @@ function generateMarkdown(data) {
     }
     // Add questions link
     console.log('contents outside loop');
-    tableContents.concat('\n- [Questions](#questions)');
+    tableContents = tableContents.concat('\n- [Questions](#questions)');
     console.log('post table of contents: ');
     console.log(tableContents);
   }

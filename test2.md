@@ -1,1 +1,1 @@
-{"title":"testagain","Description":"hre","index":true,"Installation":"k","Usage":"ks","Credits":"","License":"GNU GPLv3","Features":"","How to Contribute":"","Tests":"test","username":"josht-dev","email":"test@gmail.gom"}
+{"title":"test","Description":"","index":true,"Installation":"","Usage":"","Credits":"","License":"MIT","Features":"","How to Contribute":"","Tests":"","username":"test","email":"test@gmail.com"}
