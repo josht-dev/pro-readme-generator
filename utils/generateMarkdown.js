@@ -40,7 +40,7 @@ function renderLicenseSection(license) {
   // Get the link urls
   const link = renderLicenseLink(license);
   // Return formatted license section of readme
-  return (license) ? `\n\n## License\n\nThis project is covered under the [${license}](${link}) license.` : '';
+  return (license) ? `<br><br>## License<br><br>This project is covered under the [${license}](${link}) license.` : '';
 }
 
 // Create a function to generate markdown for README
@@ -53,10 +53,16 @@ function generateMarkdown(data) {
   const licBadge = `[![license](${renderLicenseBadge(data.License)})](${renderLicenseLink(data.License)})`;
   let tableContents = '';
 
-  // TODO - Fix table of contents when required sections are blank
+  // Check if the user indicated that the input had multiple lines with '//' in the input
+  const multiLineCheck = (val) => {
+    if (val.includes('//')) {
+      return val.replaceAll('//', '<br>');
+    } else {return val;}
+  };
+
   // Did the user answer 'Y' to a table of contents
   if (data.index) {
-    tableContents = '\n\n## Table of Contents\n';
+    tableContents = '<br><br>## Table of Contents<br>';
     // Loop through the data obj dynamically adding a table of contents
     for (const i in data) {
       const x = i.toLowerCase();
@@ -67,27 +73,27 @@ function generateMarkdown(data) {
       // Check if data present to add to the table of contents
       if (data[i] || bareMin.includes(x)) {
         let link = x.replace(/ /g, '-');
-        tableContents = tableContents.concat(`\n- [${i}](#${link})`);
+        tableContents = tableContents.concat(`<br>- [${i}](#${link})`);
       } else {
         continue;
       }
     }
     // Add questions link
-    tableContents = tableContents.concat('\n- [Questions](#questions)');
+    tableContents = tableContents.concat('<br>- [Questions](#questions)');
   }
 
   // Loop through the data obj adding sections to the readme
   for (const key in data) {
     // Check if this is for the title
     if (key.toLowerCase() === 'title') {
-      readme = `# ${data[key].toUpperCase()}\n\n${licBadge}`;
+      readme = `# ${data[key].toUpperCase()}<br><br>${licBadge}`;
       continue;      
     }
     // Check if value is empty
     if (!data[key]) {
       // Check is this is a required section, otherwise skip
       if (bareMin.includes(key.toLowerCase())) {
-        readme = readme.concat(`\n\n## ${key}\n\nN/A`);
+        readme = readme.concat(`<br><br>## ${key}<br><br>N/A`);
         continue;
       } else {
         continue;
@@ -108,9 +114,9 @@ function generateMarkdown(data) {
     // Add the Questions section and skip the email obj key
     if (key.toLowerCase() === 'username') {
       readme = readme.concat(
-        '\n\n## Questions\n\n', 
+        '<br><br>## Questions<br><br>', 
         'For any questions, please reach out to one of my points of contact:', 
-        `\n[https://github.com/${data[key]}](https://github.com/${data[key]})`, 
+        `<br>[https://github.com/${data[key]}](https://github.com/${data[key]})`, 
         ` | ${data.email}`
       ); 
       continue;
@@ -118,7 +124,8 @@ function generateMarkdown(data) {
     if (key.toLowerCase() === 'email') {continue;}
     
     // Handle all other sections that did not need specific logic
-    readme = readme.concat(`\n\n## ${key}\n\n${data[key]}`);
+    data[key] = multiLineCheck(data[key]);
+    readme = readme.concat(`<br><br>## ${key}<br><br>${data[key]}`);
   }
 
   // Return formatted readme file
@@ -127,5 +134,4 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
-// TODO - Handle any user inputs with multiple steps
 // TODO - Add validation for github username/page
