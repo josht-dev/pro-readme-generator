@@ -22,9 +22,9 @@ This NodeJS application was created to facilitate the quick creation of quality 
 
 Open a terminal in the project directory and run the command 'node index'. Answer the prompts in the terminal. Any required inputs or format has validation to check the user input. Once all the prompts are answered, the completed README.md file is saved to the output folder in the project directory.
 
-    ```md
+Here is a video walkthrough: https://drive.google.com/file/d/1eKPAWlSNdhDun44JAGzpx94XVxCjRRBp/view
+
 ![screenshot](./assets/images/screenshot.png)
-    ```
 
 ## Credits
 
